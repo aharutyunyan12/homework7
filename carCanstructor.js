@@ -10,9 +10,9 @@ Car.prototype.fill = function (gallons) {
 }
 
 Car.prototype.drive = function (distance) {
-    let requiredFuel = this.distance / this.milesPerGallon
+    let requiredFuel = distance / this.milesPerGallon
     if (requiredFuel > this.tank) {
-        drivenDistance = this.tank * this.milesPerGallon
+        let drivenDistance = this.tank * this.milesPerGallon
         this.odometer += drivenDistance
         this.tank = 0
         return `i run out of fuel at ${this.odometer} milles`
@@ -20,9 +20,11 @@ Car.prototype.drive = function (distance) {
     else {
         this.tank -= requiredFuel
         this.odometer += distance
+        return `i run out of fuel at ${this.odometer} milles`
     }
 }
 
-const car = new Car('BMW', 200)
-car.fill(50)
+const car = new Car('BMW', 5)
+car.fill(10)
+
 console.log(car.drive(100))

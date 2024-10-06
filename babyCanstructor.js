@@ -1,5 +1,9 @@
-function Baby(name, age, favoriteToy) {
+function Person(name, age){
+    this.name = name
+    this.age = age
 }
+
+function Baby(favoriteToy) {}
 
 Baby.prototype.play = function (favoriteToy) {
     return `playing with ${favoriteToy}`
